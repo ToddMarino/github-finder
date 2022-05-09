@@ -9,31 +9,31 @@ import {GithubProvider} from './context/github/GithubContext'
 
 function App() {
   return (
-        <GithubProvider>
-          <Router>
-            <div className='flex flex-col justify-between h-screen bg-slate-700'>
-              <Navbar />
-              <main className='container mx-auto px-3 pb-12'>
-                <Routes>
-                  <Route
-                    path='/'
-                    element={
-                      <>
-                        <Home />
-                      </>
-                    }
-                  />
-                  <Route path='/about' element={<About />} />
-                  <Route path='/user/:login' element={<User />} />
-                  <Route path='/notfound' element={<NotFound />} />
-                  <Route path='*' element={<NotFound />} />
-                </Routes>
-              </main>
-              <Footer />
-            </div>
-          </Router>
-        </GithubProvider>
-  )
+		<GithubProvider className=''>
+			<Router>
+				<div className='flex flex-col justify-between bg-slate-700 min-h-screen'>
+					<Navbar />
+					<main className='container mx-auto px-3 pb-12'>
+						<Routes>
+							<Route
+								path='/'
+								element={
+									<>
+										<Home />
+									</>
+								}
+							/>
+							<Route path='/about' element={<About />} />
+							<Route path='/user/:login' element={<User />} />
+							<Route path='/notfound' element={<NotFound />} />
+							<Route path='*' element={<NotFound />} />
+						</Routes>
+					</main>
+					<Footer />
+				</div>
+			</Router>
+		</GithubProvider>
+	)
 }
 
 export default App
